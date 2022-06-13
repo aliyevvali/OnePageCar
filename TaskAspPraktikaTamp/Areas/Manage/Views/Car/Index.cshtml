@@ -1,0 +1,58 @@
+﻿@model List<Car>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+    <div class="container-fluid d-flex justify-content-between align-items-center">
+        <h1>Authors:</h1>
+        <a asp-action="create" asp-controller="Education" class="btn btn-primary">Create</a>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Model</th>
+                <th scope="col">DoorCout</th>
+                <th scope="col">Price</th>
+                <th scope="col">RentACar</th>
+                <th scope="col">Luggage</th>
+                <th scope="col">Transmission</th>
+                <th scope="col">MyProperty</th>
+                <th scope="col">AirConditioning</th>
+                <th scope="col">MinimumAge</th>
+                <th scope="col">CategoryId</th>
+            </tr>
+        </thead>
+        <tbody>
+
+
+          
+            @foreach(var item in Model)
+            {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                     <td>@item.Model</td>
+                     <td>@item.DoorCout</td>
+                     <td>@item.Price</td>
+                     <td>@item.RentACar</td>
+                     <td>@item.Luggage</td>
+                     <td>@item.Transmission</td>
+                     <td>@item.MyProperty</td>
+                     <td>@item.MinimumAge</td>
+                     <td>@item.CategoryId</td>
+                    <td>
+                        <a asp-action="edit" asp-controller="Create" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                        <a asp-action="delete" asp-controller="Create" asp-route-id="@item.Id" class="btn btn-danger btn-sweet-delete">Delete</a>
+                    </td>
+                </tr>
+            }
+
+            
+
+
+        </tbody>
+    </table>
+</div>
+
